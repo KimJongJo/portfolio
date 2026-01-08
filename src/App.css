@@ -31,9 +31,12 @@ a {
 .page {
     display: flex;
     justify-content: center;
+    padding: 0 12px; /* 좌우 여백 추가 */
 }
 
 .container1 {
+    width: 100%;
+    max-width: 1200px; /* 최대 폭 제한 */
     margin: 0 auto;
 }
 
@@ -430,4 +433,220 @@ h2 {
 .project-tech-icon-wrapper:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+}
+
+/* =====================
+   RESPONSIVE (MOBILE/TABLET)
+===================== */
+@media (max-width: 1024px) {
+    /* HERO */
+    .hero h1 {
+        font-size: 28px;
+    }
+    .subtitle {
+        font-size: 14px;
+    }
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .buttons a {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
+
+/* 태블릿 */
+@media (max-width: 992px) {
+    .project-list {
+        grid-template-columns: repeat(2, 1fr); /* 한 줄에 2개 */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* HERO 이미지 */
+    .profile {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* HERO 글씨 */
+    .hero h1 {
+        font-size: 24px;
+    }
+    .subtitle {
+        font-size: 13px;
+    }
+
+    /* HERO 버튼 */
+    .buttons a {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    /* 프로필 카드 2줄 레이아웃 → 세로로 */
+    .container1 > .hero > div[style*="flex-direction: column"] {
+        gap: 20px;
+    }
+    .container1 > .hero > div[style*="flex-direction: column"] > div {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* SKILLS */
+    .skills {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .skill-imgs {
+        width: 30px;
+        height: 30px;
+    }
+
+    .skill-group h3 {
+        font-size: 16px;
+    }
+
+    /* PROJECTS */
+    .project-list {
+        grid-template-columns: 1fr; /* 한 줄에 1개 */
+        gap: 16px;
+    }
+
+    .project-card {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .project-card h3 {
+        font-size: 16px;
+    }
+
+    .project-card p {
+        font-size: 13px;
+    }
+
+    /* MODAL */
+    .modal-content {
+        padding: 12px;
+    }
+    .modal-header {
+        padding: 16px 20px 10px;
+    }
+    .modal-body {
+        padding: 0 20px 16px;
+        font-size: 14px;
+    }
+    .modal-footer {
+        padding: 12px 20px 20px;
+    }
+
+    /* BLOG 링크 */
+    .link {
+        font-size: 14px;
+    }
+}
+
+/* 초소형 모바일 */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 20px;
+    }
+    .subtitle {
+        font-size: 12px;
+    }
+    .buttons a {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .skill-imgs {
+        width: 25px;
+        height: 25px;
+    }
+
+    .project-card {
+        padding: 16px;
+    }
+    .project-card h3 {
+        font-size: 14px;
+    }
+    .project-card p {
+        font-size: 12px;
+    }
+}
+
+/* ===================== CONTACT INFO ===================== */
+.contact-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-top: 30px;
+}
+
+.contact-row {
+    display: flex;
+    gap: 60px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 240px;
+    justify-content: center;
+}
+
+.contact-item-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.label {
+    font-size: 13px;
+    color: #777;
+}
+
+.value {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.link {
+    color: #0366d6;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* ===================== 반응형 ===================== */
+@media (max-width: 1024px) {
+    .contact-row {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-row {
+        flex-direction: column;
+        gap: 16px;
+        width: 210px;
+    }
+
+    .contact-item {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .contact-info-wrapper {
+        gap: 16px;
+    }
 }

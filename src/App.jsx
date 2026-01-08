@@ -120,130 +120,59 @@ export default function App() {
                         </a>
                     </div>
 
-                    <div
-                        style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            gap: "32px",
-                            marginTop: "30px",
-                        }}
-                    >
+                    <div className="contact-info-wrapper">
                         {/* 1번째 줄 */}
-                        <div style={{ display: "flex", gap: "60px" }}>
-                            {/* 이름 */}
-                            <div
-                                style={{
-                                    width: "240px",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "0 auto", width: "200px" }}>
-                                    <FaUser size={20} />
-                                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-                                        <span style={{ fontSize: "13px", color: "#777" }}>이름</span>
-                                        <span style={{ fontSize: "15px", fontWeight: "500" }}>김종조</span>
-                                    </div>
+                        <div className="contact-row">
+                            <div className="contact-item">
+                                <FaUser size={20} />
+                                <div className="contact-item-text">
+                                    <span className="label">이름</span>
+                                    <span className="value">김종조</span>
                                 </div>
                             </div>
 
-                            {/* 생년월일 */}
-                            <div
-                                style={{
-                                    width: "240px",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "0 auto", width: "200px" }}>
-                                    <FaCalendarAlt size={20} />
-                                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-                                        <span style={{ fontSize: "13px", color: "#777" }}>생년월일</span>
-                                        <span style={{ fontSize: "15px", fontWeight: "500" }}>00.03.09</span>
-                                    </div>
+                            <div className="contact-item">
+                                <FaCalendarAlt size={20} />
+                                <div className="contact-item-text">
+                                    <span className="label">생년월일</span>
+                                    <span className="value">00.03.09</span>
                                 </div>
                             </div>
 
-                            {/* 위치 */}
-                            <div
-                                style={{
-                                    width: "240px",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "0 auto", width: "200px" }}>
-                                    <FaMapMarkerAlt size={20} />
-                                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-                                        <span style={{ fontSize: "13px", color: "#777" }}>위치</span>
-                                        <span style={{ fontSize: "15px", fontWeight: "500" }}>서울특별시 중랑구</span>
-                                    </div>
+                            <div className="contact-item">
+                                <FaMapMarkerAlt size={20} />
+                                <div className="contact-item-text">
+                                    <span className="label">위치</span>
+                                    <span className="value">서울특별시 중랑구</span>
                                 </div>
                             </div>
                         </div>
 
                         {/* 2번째 줄 */}
-                        <div style={{ display: "flex", gap: "60px" }}>
-                            {/* 연락처 */}
-                            <div
-                                style={{
-                                    width: "240px",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "0 auto", width: "200px" }}>
-                                    <FaPhone size={20} />
-                                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-                                        <span style={{ fontSize: "13px", color: "#777" }}>연락처</span>
-                                        <span style={{ fontSize: "15px", fontWeight: "500" }}>010-5270-8614</span>
-                                    </div>
+                        <div className="contact-row">
+                            <div className="contact-item">
+                                <FaPhone size={20} />
+                                <div className="contact-item-text">
+                                    <span className="label">연락처</span>
+                                    <span className="value">010-5270-8614</span>
                                 </div>
                             </div>
 
-                            {/* 이메일 */}
-                            <div
-                                style={{
-                                    width: "240px",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "0 auto", width: "200px" }}>
-                                    <FaEnvelope size={20} />
-                                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-                                        <span style={{ fontSize: "13px", color: "#777" }}>이메일</span>
-                                        <span style={{ fontSize: "15px", fontWeight: "500" }}>desk1614@gmail.com</span>
-                                    </div>
+                            <div className="contact-item">
+                                <FaEnvelope size={20} />
+                                <div className="contact-item-text">
+                                    <span className="label">이메일</span>
+                                    <span className="value">desk1614@gmail.com</span>
                                 </div>
                             </div>
 
-                            {/* GitHub */}
-                            <div
-                                style={{
-                                    width: "240px",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                }}
-                            >
-                                <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "0 auto", width: "200px" }}>
-                                    <FaGithub size={20} />
-                                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-                                        <span style={{ fontSize: "13px", color: "#777" }}>깃허브</span>
-                                        <a
-                                            style={{
-                                                fontSize: "15px",
-                                                fontWeight: "500",
-                                                color: "#0366d6",
-                                                cursor: "pointer",
-                                            }}
-                                            href="https://github.com/KimJongJo"
-                                            target="_blank"
-                                        >
-                                            github.com/KimJongJo
-                                        </a>
-                                    </div>
+                            <div className="contact-item">
+                                <FaGithub size={20} />
+                                <div className="contact-item-text">
+                                    <span className="label">깃허브</span>
+                                    <a href="https://github.com/KimJongJo" target="_blank" className="value link">
+                                        github.com/KimJongJo
+                                    </a>
                                 </div>
                             </div>
                         </div>
