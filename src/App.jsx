@@ -1,7 +1,9 @@
 import { useState } from "react";
 import profile from "./assets/profile.png";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { FaUser, FaCalendarAlt, FaMapMarkerAlt, FaPhone, FaEnvelope, FaGithub } from "react-icons/fa";
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
 
 export default function App() {
     const [open, setOpen] = useState(false);
@@ -9,45 +11,95 @@ export default function App() {
 
     const projects = [
         {
-            title: "AI Interview",
-            summary: "GPT API 기반 모의 면접 서비스",
-            tech: "React, Spring Boot, GPT API",
-            detail: "이력서를 기반으로 질문을 생성하고 사용자의 답변에 대해 피드백을 제공하는 서비스입니다.",
-            github: "https://github.com/your-id/aiinterview",
-        },
-        {
-            title: "Movie Recommendation",
-            summary: "영화 추천 웹 서비스",
-            tech: "React, TMDB API",
-            detail: "사용자 취향에 맞는 영화를 추천하고 상세 정보를 제공하는 서비스입니다.",
-            github: "https://github.com/your-id/movie",
-        },
-        {
-            title: "Matching Platform",
-            summary: "전문가 매칭 서비스",
-            tech: "Spring Boot, JPA, MySQL",
+            title: "집딱",
+            summary: "수리·인테리어 전 과정을 한 번에 제공하는 통합 플랫폼 서비스",
+            tech: ["springboot", "springsecurity", "jwt", "jpa", "querydsl", "mariadb", "react"],
             detail: "일반 사용자와 전문가를 매칭하고 견적 요청 및 관리를 할 수 있는 플랫폼입니다.",
             github: "https://github.com/your-id/matching",
+            image: "/about-me/logos/zipddak.png",
         },
         {
-            title: "Portfolio Website",
-            summary: "개인 포트폴리오 웹사이트",
-            tech: "React, Vite, GitHub Pages",
-            detail: "개인 소개와 프로젝트를 정리한 원페이지 포트폴리오 사이트입니다.",
-            github: "https://github.com/your-id/portfolio",
-        },
-        {
-            title: "Community Board",
-            summary: "게시판 & 커뮤니티 서비스",
-            tech: "Spring Boot, JPA, React",
+            title: "건강이음",
+            summary: "정신건강 자가테스트와 병원 예약·진료를 제공하는 정신건강 플랫폼 서비스",
+            tech: ["springboot", "mybatis", "mariadb", "servletjsp", "jquery"],
             detail: "게시글 작성, 댓글, 좋아요 기능을 포함한 커뮤니티 웹 서비스입니다.",
             github: "https://github.com/your-id/community",
+            image: "/about-me/logos/ieum.png",
+        },
+        {
+            title: "AI 면접관",
+            summary: "GPT API 기반 이력서 연계 모의 면접 서비스",
+            tech: ["springboot", "react", "GPT_API"],
+            detail: "이력서를 기반으로 질문을 생성하고 사용자의 답변에 대해 피드백을 제공하는 서비스입니다.",
+            github: "https://github.com/your-id/aiinterview",
+            image: "/about-me/logos/aiInterview.png",
+        },
+        {
+            title: "JMove",
+            summary: "TMDB API 기반 영화 탐색 및 정보 제공 웹 서비스",
+            tech: ["springboot", "springsecurity", "jwt", "jpa", "oracle", "react", "TMDB_API"],
+            detail: "사용자 취향에 맞는 영화를 추천하고 상세 정보를 제공하는 서비스입니다.",
+            github: "https://github.com/your-id/movie",
+            image: "/about-me/logos/jmove.png",
+        },
+
+        {
+            title: "휠링캠프",
+            summary: "여행지 추천과 여행 물품 구매·대여를 제공하는 여행 플랫폼 서비스",
+            tech: ["springboot", "springsecurity", "mybatis", "mariadb", "oracle", "react", "jquery"],
+            detail: "개인 소개와 프로젝트를 정리한 원페이지 포트폴리오 사이트입니다.",
+            github: "https://github.com/your-id/portfolio",
+            image: "/about-me/logos/wheelingCamp.png",
+        },
+        {
+            title: "언더 더 씨",
+            summary: "씨앗 구매와 커뮤니티 기능을 제공하는 씨앗 플랫폼 서비스",
+            tech: ["springboot", "springsecurity", "mybatis", "servletjsp", "thymeleaf", "oracle"],
+            detail: "게시글 작성, 댓글, 좋아요 기능을 포함한 커뮤니티 웹 서비스입니다.",
+            github: "https://github.com/your-id/community",
+            image: "/about-me/logos/seed.png",
         },
     ];
 
+    const techIcons = {
+        // Frontend
+        html: "/about-me/skillImgs/html.png",
+        css: "/about-me/skillImgs/css.png",
+        javascript: "/about-me/skillImgs/js.png",
+        jquery: "/about-me/skillImgs/jquery.png",
+        react: "/about-me/skillImgs/react.png",
+
+        // Backend
+        java: "/about-me/skillImgs/java.png",
+        servletjsp: "/about-me/skillImgs/jsp.png",
+        thymeleaf: "/about-me/skillImgs/thymeleaf.png",
+        springboot: "/about-me/skillImgs/springBoot.png",
+        springsecurity: "/about-me/skillImgs/security.png",
+        jpa: "/about-me/skillImgs/jpa.png",
+        querydsl: "/about-me/skillImgs/queryDsl.png",
+        mybatis: "/about-me/skillImgs/mybatis.png",
+        jwt: "/about-me/skillImgs/jwt.png",
+
+        // Database
+        oracle: "/about-me/skillImgs/oracle.png",
+        mysql: "/about-me/skillImgs/mysql.png",
+        mariadb: "/about-me/skillImgs/mariaDB.png",
+
+        // Tools
+        github: "/about-me/skillImgs/github.png",
+        git: "/about-me/skillImgs/git.png",
+        figma: "/about-me/skillImgs/figma.png",
+        postman: "/about-me/skillImgs/postman.png",
+        notion: "/about-me/skillImgs/notion.png",
+
+        // External / API
+        TMDB_API: "/about-me/skillImgs/TMDB_API.png",
+        GPT_API: "/about-me/skillImgs/GPT_API.png",
+    };
+
     return (
         <div className="page">
-            <div className="container">
+            <div className="container1">
                 {/* HERO */}
                 <section className="hero">
                     <div className="hero-bg" />
@@ -274,6 +326,11 @@ export default function App() {
                                 <img className="skill-imgs" src="/about-me/skillImgs/mybatis.png" alt="React" />
                                 <span className="tooltip">Mybatis</span>
                             </div>
+
+                            <div className="skill-icon">
+                                <img className="skill-imgs" src="/about-me/skillImgs/jwt.png" alt="React" />
+                                <span className="tooltip">JWT</span>
+                            </div>
                         </div>
                     </div>
 
@@ -334,6 +391,7 @@ export default function App() {
                     <div className="project-list">
                         {projects.map((p) => (
                             <div
+                                style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}
                                 key={p.title}
                                 className="project-card"
                                 onClick={() => {
@@ -341,9 +399,21 @@ export default function App() {
                                     setOpen(true);
                                 }}
                             >
-                                <h3>{p.title}</h3>
-                                <p>{p.summary}</p>
-                                <small>{p.tech}</small>
+                                <div>
+                                    <h3 style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                                        <img style={{ width: "40px", height: "40px" }} src={p.image} alt="" />
+                                        <div>{p.title}</div>
+                                    </h3>
+                                    <p>{p.summary}</p>
+                                </div>
+                                <div className="project-tech-icons">
+                                    {p.tech.map((t) => (
+                                        <div key={t} className="project-tech-icon-wrapper">
+                                            <img src={techIcons[t]} alt={t} className="project-tech-icon" />
+                                            <span className="tooltip-text">{t}</span>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -358,19 +428,36 @@ export default function App() {
                 </section>
 
                 {/* MODAL */}
-                {open && (
-                    <div className="modal" onClick={() => setOpen(false)}>
-                        <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-                            <h3>{project.title}</h3>
-                            <p>{project.detail}</p>
-                            <p className="tech">{project.tech}</p>
-                            <a href={project.github} target="_blank">
-                                GitHub →
-                            </a>
-                            <button onClick={() => setOpen(false)}>닫기</button>
-                        </div>
-                    </div>
-                )}
+                <Modal isOpen={open} toggle={() => setOpen(false)} centered>
+                    {project && (
+                        <>
+                            <ModalHeader toggle={() => setOpen(false)}>{project.title}</ModalHeader>
+
+                            <ModalBody>
+                                <p>{project.detail}</p>
+                                <p
+                                    style={{
+                                        fontSize: "14px",
+                                        color: "#666",
+                                        marginTop: "12px",
+                                    }}
+                                >
+                                    {project.tech}
+                                </p>
+                            </ModalBody>
+
+                            <ModalFooter>
+                                <a href={project.github} target="_blank" rel="noopener noreferrer" style={{ marginRight: "auto" }}>
+                                    GitHub →
+                                </a>
+
+                                <Button color="secondary" onClick={() => setOpen(false)}>
+                                    닫기
+                                </Button>
+                            </ModalFooter>
+                        </>
+                    )}
+                </Modal>
             </div>
         </div>
     );
