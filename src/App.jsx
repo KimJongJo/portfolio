@@ -1,6 +1,7 @@
 import { useState } from "react";
 import profile from "./assets/profile.png";
 import "./App.css";
+import { FaUser, FaCalendarAlt, FaMapMarkerAlt, FaPhone, FaEnvelope, FaGithub } from "react-icons/fa";
 
 export default function App() {
     const [open, setOpen] = useState(false);
@@ -62,76 +63,135 @@ export default function App() {
                     </p>
                     <div className="buttons">
                         <a href="#projects">프로젝트 보기</a>
-                        <a href="#contact" className="outline">
-                            연락하기
+                        <a href={`${import.meta.env.BASE_URL}김종조이력서.pdf`} download className="outline">
+                            📄 이력서 다운로드
                         </a>
                     </div>
-                    <a className="resume-link" href={`${import.meta.env.BASE_URL}김종조이력서.pdf`} download>
-                        📄 이력서 다운로드
-                    </a>
 
                     <div
                         style={{
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "center",
+                            gap: "32px",
+                            marginTop: "30px",
                         }}
                     >
-                        <div style={{ display: "flex" }}>
-                            <div style={{ display: "flex" }}>
-                                <div>
-                                    <span>아이콘</span>
-                                </div>
-                                <div style={{ display: "flex", flexDirection: "column" }}>
-                                    <span>이름</span>
-                                    <span>김종조</span>
+                        {/* 1번째 줄 */}
+                        <div style={{ display: "flex", gap: "60px" }}>
+                            {/* 이름 */}
+                            <div
+                                style={{
+                                    width: "240px",
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "0 auto", width: "200px" }}>
+                                    <FaUser size={20} />
+                                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                                        <span style={{ fontSize: "13px", color: "#777" }}>이름</span>
+                                        <span style={{ fontSize: "15px", fontWeight: "500" }}>김종조</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div style={{ display: "flex" }}>
-                                <div>
-                                    <span>아이콘</span>
-                                </div>
-                                <div style={{ display: "flex", flexDirection: "column" }}>
-                                    <span>이름</span>
-                                    <span>김종조</span>
+
+                            {/* 생년월일 */}
+                            <div
+                                style={{
+                                    width: "240px",
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "0 auto", width: "200px" }}>
+                                    <FaCalendarAlt size={20} />
+                                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                                        <span style={{ fontSize: "13px", color: "#777" }}>생년월일</span>
+                                        <span style={{ fontSize: "15px", fontWeight: "500" }}>00.03.09</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div style={{ display: "flex" }}>
-                                <div>
-                                    <span>아이콘</span>
-                                </div>
-                                <div style={{ display: "flex", flexDirection: "column" }}>
-                                    <span>이름</span>
-                                    <span>김종조</span>
+
+                            {/* 위치 */}
+                            <div
+                                style={{
+                                    width: "240px",
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "0 auto", width: "200px" }}>
+                                    <FaMapMarkerAlt size={20} />
+                                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                                        <span style={{ fontSize: "13px", color: "#777" }}>위치</span>
+                                        <span style={{ fontSize: "15px", fontWeight: "500" }}>서울특별시 중랑구</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div style={{ display: "flex" }}>
-                            <div style={{ display: "flex" }}>
-                                <div>
-                                    <span>아이콘</span>
-                                </div>
-                                <div style={{ display: "flex", flexDirection: "column" }}>
-                                    <span>이름</span>
-                                    <span>김종조</span>
+
+                        {/* 2번째 줄 */}
+                        <div style={{ display: "flex", gap: "60px" }}>
+                            {/* 연락처 */}
+                            <div
+                                style={{
+                                    width: "240px",
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "0 auto", width: "200px" }}>
+                                    <FaPhone size={20} />
+                                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                                        <span style={{ fontSize: "13px", color: "#777" }}>연락처</span>
+                                        <span style={{ fontSize: "15px", fontWeight: "500" }}>010-5270-8614</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div style={{ display: "flex" }}>
-                                <div>
-                                    <span>아이콘</span>
-                                </div>
-                                <div style={{ display: "flex", flexDirection: "column" }}>
-                                    <span>이름</span>
-                                    <span>김종조</span>
+
+                            {/* 이메일 */}
+                            <div
+                                style={{
+                                    width: "240px",
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "0 auto", width: "200px" }}>
+                                    <FaEnvelope size={20} />
+                                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                                        <span style={{ fontSize: "13px", color: "#777" }}>이메일</span>
+                                        <span style={{ fontSize: "15px", fontWeight: "500" }}>desk1614@gmail.com</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div style={{ display: "flex" }}>
-                                <div>
-                                    <span>아이콘</span>
-                                </div>
-                                <div style={{ display: "flex", flexDirection: "column" }}>
-                                    <span>이름</span>
-                                    <span>김종조</span>
+
+                            {/* GitHub */}
+                            <div
+                                style={{
+                                    width: "240px",
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "0 auto", width: "200px" }}>
+                                    <FaGithub size={20} />
+                                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                                        <span style={{ fontSize: "13px", color: "#777" }}>깃허브</span>
+                                        <a
+                                            style={{
+                                                fontSize: "15px",
+                                                fontWeight: "500",
+                                                color: "#0366d6",
+                                                cursor: "pointer",
+                                            }}
+                                            href="https://github.com/KimJongJo"
+                                            target="_blank"
+                                        >
+                                            github.com/KimJongJo
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
