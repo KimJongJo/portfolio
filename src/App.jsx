@@ -77,7 +77,7 @@ export default function App() {
         {
           title: "자재구매",
           img: "/about-me/projects/zipddakPayment.png",
-          content: "Toss Payments API 연동으로 다양한 결제수단 ㅔ공",
+          content: "Toss Payments API 연동으로 다양한 결제수단 제공",
         },
         {
           title: "관리자 페이지 통계",
