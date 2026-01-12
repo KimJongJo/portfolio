@@ -55,6 +55,37 @@ export default function App() {
         solution:
           "각 테이블의 PK를 기준으로 PK에 대한 countDistinct() 집계함수를 적용해 중복 레코드를 제거했으며, 이를 통해 조인으로 인한 데이터 중복 문제를 해결하고 평균 평점과 경력 합계가 예상과 일치하도록 개선했습니다.",
       },
+      proImg: [
+        {
+          title: "메인화면",
+          img: "/about-me/projects/zipddakMain.png",
+          content:
+            "통합검색을 중심으로 전문가·자재·공구를 추천하여 빠른 탐색 지원",
+        },
+        {
+          title: "견적 요청",
+          img: "/about-me/projects/zipddakRequest.png",
+          content:
+            "수리·인테리어·컨설팅 유형에 따라 맞춤 질문 기반 견적 요청서 작성",
+        },
+        {
+          title: "장바구니",
+          img: "/about-me/projects/zipddakCart.png",
+          content:
+            "브랜드별 상품 분류 및 동일 상품 수량 자동 증가, 배송비 자동 계산",
+        },
+        {
+          title: "자재구매",
+          img: "/about-me/projects/zipddakPayment.png",
+          content: "Toss Payments API 연동으로 다양한 결제수단 ㅔ공",
+        },
+        {
+          title: "관리자 페이지 통계",
+          img: "/about-me/projects/zipddakAdmin.png",
+          content:
+            "전월 대비 매칠 비교를 통해 수익구조, 회원 수, 월별 매출 현황 확인",
+        },
+      ],
     },
     {
       title: "건강이음",
@@ -630,9 +661,21 @@ export default function App() {
 
                   <section className="modal-section">
                     <h5 className="modal-section-title">핵심 기능</h5>
-                    <ul className="list">
-                      {project.features?.map((f, i) => (
-                        <li key={i}>{f}</li>
+
+                    <ul className="feature-list">
+                      {project.proImg?.map((f, i) => (
+                        <li className="feature-item" key={i}>
+                          <div className="feature-img-wrapper">
+                            <img src={f.img} alt={f.title} />
+                          </div>
+
+                          <div className="feature-text">
+                            <h6 className="feature-title">{f.title}</h6>
+                            {f.content && (
+                              <p className="feature-content">{f.content}</p>
+                            )}
+                          </div>
+                        </li>
                       ))}
                     </ul>
                   </section>
