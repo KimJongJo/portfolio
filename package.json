@@ -1,9 +1,9 @@
 {
-    "name": "about_me",
+    "name": "portfolio",
     "private": true,
     "version": "0.0.0",
     "type": "module",
-    "homepage": "https://kimjongjo.github.io/about-me",
+    "homepage": "https://kimjongjo.github.io/portfolio",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
