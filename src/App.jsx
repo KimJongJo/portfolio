@@ -92,6 +92,7 @@ export default function App() {
             teamSize: 4,
             solo: false,
             award: "최우수상",
+            architecture: "/portfolio/architecture/건강이음아키텍처.png",
             roles: [
                 {
                     title: "사용자 서비스 및 인증 개발",
@@ -213,6 +214,7 @@ export default function App() {
             // 상세 보기에 대한 데이터
             period: "2025.01 ~ 2025.02",
             teamSize: 1,
+            architecture: "/portfolio/architecture/JMOVE아키텍처.png",
             solo: true,
             roles: [
                 {
@@ -270,7 +272,7 @@ export default function App() {
         {
             title: "휠링캠프",
             summary: "여행지 추천과 여행 물품 구매·대여를 제공하는 여행 플랫폼 서비스",
-            tech: ["springboot", "springsecurity", "mybatis", "mariadb", "oracle", "react", "jquery"],
+            tech: ["springboot", "springsecurity", "mybatis", "thymeleaf", "oracle", "react", "jquery"],
             detail: "개인 소개와 프로젝트를 정리한 원페이지 포트폴리오 사이트입니다.",
             github: "https://github.com/KimJongJo/WheelingCamp",
             image: "/portfolio/logos/wheelingCamp.png",
@@ -278,6 +280,7 @@ export default function App() {
             // 상세 보기에 대한 데이터
             period: "2024.05 ~ 2024.06",
             teamSize: 6,
+            architecture: "/portfolio/architecture/휠링캠프아키텍처.png",
             solo: false,
             roles: [
                 {
@@ -343,6 +346,7 @@ export default function App() {
             // 상세 보기에 대한 데이터
             period: "2024.04 ~ 2024.05",
             teamSize: 3,
+            architecture: "/portfolio/architecture/언더더씨아키텍처.png",
             solo: false,
             roles: [
                 {
@@ -774,7 +778,7 @@ export default function App() {
                                     </section>
 
                                     <section className="modal-section">
-                                        <h5 className="modal-section-title">아키텍처</h5>
+                                        <h5 className="modal-section-title">서비스 아키텍처</h5>
                                         <div className="overview architecture-div-img">
                                             <img className="architecture-img" src={project.architecture} alt="" />
                                         </div>
