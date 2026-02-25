@@ -770,6 +770,11 @@ h2 {
     color: #dfa002;
 }
 
+/* 아키텍처 */
+/* .architecture-img {
+    width: 428px;
+} */
+
 /* 팀 프로젝트 */
 .project-badge.team {
     background-color: #eef2ff;
@@ -855,6 +860,12 @@ h2 {
 .feature-img-wrapper {
     width: 100%;
     background: #f6f7f9;
+}
+
+.architecture-img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .feature-img-wrapper img {
