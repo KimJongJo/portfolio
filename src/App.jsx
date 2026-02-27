@@ -74,26 +74,38 @@ export default function App() {
         {
           title: "견적 요청",
           img: "/portfolio/projects/zipddakRequest.png",
-          content:
-            "수리, 인테리어, 컨설팅 서비스 유형별 맞춤 질문 세트를 구성하고, 대화형 UI를 통한 상세 견적 요청서 작성 기능 구현",
+          content: [
+            "수리·인테리어·컨설팅별 맞춤 질문 세트를 프론트에 구성하고, 사용자 답변에 따라 다음 질문이 결정되는 동적 UI 구현",
+            "useState 내 단일 객체에 각 단계의 답변을 실시간 업데이트 하며, 최종 제출 시 누적된 데이터를 요청서 테이블에 일괄 저장",
+            "작성 중 페이지 이탈 시 상태값을 즉시 초기화하여, 새로운 견적 요청 시 발생 할 수 있는 데이터 혼선 및 오염 방지",
+          ],
         },
         {
           title: "장바구니",
           img: "/portfolio/projects/zipddakCart.png",
-          content:
-            "브랜드별 상품 자동 분류 및 동일 상품 중복 추가 시 수량 합산, 배송비 자동 산출 로직 적용",
+          content: [
+            "브랜드별 상품 자동 분류 및 동일 상품 중복 추가 시 수량 합산 로직을 통한 사용자 편의성 향상",
+            "백엔드 상품 데이터를 브랜드 단위로 그룹화하여 주문 정보의 가독성을 높인 장바구니 UI 구현",
+            "상품 유형(묶음/개별)에 따른 배송비 산출 알고리즘 및 총 결제 금액 자동 계산 기능 적용",
+          ],
         },
         {
           title: "자재구매",
           img: "/portfolio/projects/zipddakPayment.png",
-          content:
-            "Toss Payments API 연동을 통해 다양한 결제 수단을 지원하고, 결제 승인 및 취소 등 주문 라이프사이클 관리",
+          content: [
+            "Toss Payments API 연동을 통해 다양한 결제 수단을 지원하고 안정적인 결제 승인 프로세스 구현",
+            "결제 금액 변조를 차단하기 위해 프론트 데이터가 아닌 DB의 상품 정보를 직접 참조하여 최종 금액 산출 및 검증",
+            "결제 승인 완료 시 주문 데이터를 DB에 저장하고 사용자에게 실시간 결제 완료 결과 반환",
+          ],
         },
         {
           title: "관리자 페이지 통계",
           img: "/portfolio/projects/zipddakAdmin.png",
-          content:
-            "전월 대비 매출 비교 및 월별 수익 구조, 회원 수 변동 지표를 한눈에 파악할 수 있는 데이터 시각화 대시보드 구축",
+          content: [
+            "Chart.js를 활용하여 전월 대비 매출 및 회원 수 변동 지표를 그래프로 시각화한 관리자 대시보드 구축",
+            "매월 1일 0시 10분에 실행되는 자동 정산 스케줄러를 구현하여 정산 업무의 정확성 및 사용자 편의성 향상",
+            "서비스의 전반적인 수익 구조와 사용자 지표를 실시간 데이터 기반으로 분석할 수 있는 통합 관리 기능 제공",
+          ],
         },
       ],
     },
@@ -150,20 +162,23 @@ export default function App() {
         {
           title: "진단서 작성",
           img: "/portfolio/projects/ieumWrite.png",
-          content:
+          content: [
             "환자의 과거 진료 히스토리 데이터를 실시간으로 연동하여 의료진이 연속성 있는 진단 내용을 작성할 수 있도록 기능 구현",
+          ],
         },
         {
           title: "과거 진단 기록",
           img: "/portfolio/projects/ieumHistory.png",
-          content:
+          content: [
             "정보 보안 및 개인정보 보호를 위해 의료진 본인이 직접 작성한 진단 데이터에 대해서만 접근 가능한 필터링 로직 적용",
+          ],
         },
         {
           title: "병원 제휴 심사",
           img: "/portfolio/projects/ieumAuth.png",
-          content:
+          content: [
             "사업자등록증 검토 등 증빙 서류 기반의 검증 단계를 설계하여, 신규 병원 입점 신청에 대한 승인 및 반려 워크플로우 구축",
+          ],
         },
       ],
     },
@@ -220,26 +235,30 @@ export default function App() {
         {
           title: "로그인",
           img: "/portfolio/projects/jmoveLogin.png",
-          content:
+          content: [
             "OAuth 소셜 로그인 연동으로 인증 절차를 간소화하고, 최초 로그인 시 사용자 정보 자동 저장 및 세션 관리 로직 적용",
+          ],
         },
         {
           title: "영화정보",
           img: "/portfolio/projects/jmoveMovie.png",
-          content:
+          content: [
             "외부 API 연동을 통해 영화별 줄거리, 평점, 포스터 등 상세 메타데이터를 수집하여 사용자에게 최적화된 상세 정보 노출",
+          ],
         },
         {
           title: "영화검색",
           img: "/portfolio/projects/jmoveSearch.png",
-          content:
+          content: [
             "검색 키워드 기반의 실시간 데이터 필터링을 구현하고, 조건에 따른 영화 리스트 조회 및 검색 결과 처리 시스템 구축",
+          ],
         },
         {
           title: "북마크",
           img: "/portfolio/projects/jmoveMypage.png",
-          content:
+          content: [
             "사용자별 관심 영화 북마크 기능을 구현하여, 개인별 즐겨찾기 목록을 별도 페이지에서 관리할 수 있는 환경 제공",
+          ],
         },
       ],
     },
@@ -303,26 +322,30 @@ export default function App() {
         {
           title: "로그인",
           img: "/portfolio/projects/wheelLogin.png",
-          content:
+          content: [
             "신규 및 기존 가입자 분기 처리를 통해 로그인·회원가입 로직을 구현하고, 이메일 중복 검사 및 추가 정보 입력 페이지 연동",
+          ],
         },
         {
           title: "아이디/비밀번호찾기",
           img: "/portfolio/projects/wheelFind.png",
-          content:
+          content: [
             "인증 데이터 기반의 회원 조회 기능을 구현하고, 일반 가입 아이디 노출 또는 소셜 로그인 방식 안내 등 맞춤 정보 제공",
+          ],
         },
         {
           title: "관심상품/장바구니",
           img: "/portfolio/projects/wheelCart.png",
-          content:
+          content: [
             "장바구니 내 선택 상품 삭제 및 실시간 결제 금액 계산 기능을 구현하고, 상품 유형(대여/구매)별 장바구니 담기 로직 적용",
+          ],
         },
         {
           title: "1:1 채팅",
           img: "/portfolio/projects/wheelChat.png",
-          content:
+          content: [
             "사용자용 실시간 채팅 및 알림 기능을 구축하고, 관리자 화면 내 읽지 않은 문의 최상단 정렬 및 실시간 읽음 처리 상태 관리",
+          ],
         },
       ],
     },
@@ -385,32 +408,37 @@ export default function App() {
         {
           title: "상품 검색",
           img: "/portfolio/projects/seedSearch.png",
-          content:
+          content: [
             "키워드 기반의 실시간 상품 조회와 검색 결과 부재 시 예외 처리를 구현하고, 높은/낮은 가격순 및 카테고리별 정렬 필터 적용",
+          ],
         },
         {
           title: "상품 등록",
           img: "/portfolio/projects/seedAdd.png",
-          content:
+          content: [
             "관리자 전용 상품 관리 시스템을 구축하여 신규 상품 데이터 등록 및 실시간 메인 목록 반영 기능 구현",
+          ],
         },
         {
           title: "상품 품절 및 판매 관리",
           img: "/portfolio/projects/seedEnd.png",
-          content:
+          content: [
             "상품 상태(판매/품절)에 따른 목록 노출 제어 로직을 설계하여, 품절 처리 시 메인 화면 자동 제외 및 판매 재개 기능 적용",
+          ],
         },
         {
           title: "장바구니",
           img: "/portfolio/projects/seedCart.png",
-          content:
+          content: [
             "목록 및 상세 페이지 내 다중 진입로를 구축하고, 선택 상품별 수량 증감 및 체크 여부에 따른 실시간 결제 금액 산출 기능 구현",
+          ],
         },
         {
           title: "문의 게시판",
           img: "/portfolio/projects/seedWrite.png",
-          content:
+          content: [
             "게시글과 댓글의 생성·수정·삭제(CRUD) 기능을 구축하고, 조회수 집계 및 좋아요 등 사용자 상호작용 기능 구현",
+          ],
         },
       ],
     },
@@ -979,9 +1007,16 @@ export default function App() {
 
                           <div className="feature-text">
                             <h6 className="feature-title">{f.title}</h6>
-                            {f.content && (
-                              <p className="feature-content">{f.content}</p>
-                            )}
+                            {f.content.map((item) => {
+                              console.log(item);
+                              return (
+                                <ul>
+                                  <li key={item} className="feature-content">
+                                    {item}
+                                  </li>
+                                </ul>
+                              );
+                            })}
                           </div>
                         </li>
                       ))}
